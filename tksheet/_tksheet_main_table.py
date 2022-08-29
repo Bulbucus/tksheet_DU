@@ -4922,7 +4922,7 @@ class MainTable(tk.Canvas):
             x, y = self.coords(canvas_window)
             x = int(x)
             y = int(y)
-            rpos = bisect.bisect_left(self.row_positions, y)
+            rpos = bisect.bisect_right(self.row_positions, y) - 1
             cpos = bisect.bisect_left(self.col_positions, x)
             r = rpos
             c = self.displayed_columns[cpos] if not self.all_columns_displayed else cpos
